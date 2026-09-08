@@ -14,7 +14,7 @@
   (:require [watari.methods.autorun :as autorun]
             [clojure.java.io :as io]
             [clojure.java.shell :refer [sh]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is run-tests]]))
 
 (defn- tmp-log [] (let [f (java.io.File/createTempFile "wri-log-" ".kotoba.edn")] (.delete f) f))

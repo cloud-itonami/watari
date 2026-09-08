@@ -20,7 +20,7 @@
   Reads manifest + central lexicons via cheshire (procedure-schema-aware). It weakens no gate;
   it asserts them. No-server-key + Murakumo-only (G6) + outward-gating (G7) are manifest-level."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             [cheshire.core :as json]))
 
@@ -45,7 +45,7 @@
 (defn- enum-of [doc field] (set (get-in (props-of doc) [field "enum"])))
 (defn- gate-map []
   (into {} (map (fn [g] [(get g :gate/id) (get g :gate/rule)])) (:actor/gates (manifest))))
-(defn- gate-text [g] (str/lower-case (str (get (gate-map) g))))
+(defn- gate-text [g] (str/lower (str (get (gate-map) g))))
 
 (def SOURCING #{"authoritative" "representative" "synthesized"})
 

@@ -17,7 +17,7 @@
   behind #?(:clj …). SELF-CONTAINED: own JSON reader, no sibling require. There is no
   content-addressing in ingest.py (it writes nothing — the R1 emit step is a NOTE), so this port
   carries no sha256/CID. (The Python `__main__` demo printer is the -main concern.)"
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── minimal JSON reader (subset sufficient for the public-broadcast sample) ───────
 ;; maps string-keyed, integers → long, floats → double, literals → true/false/nil — Python
@@ -132,7 +132,7 @@
   "OpenSky /states/all vector → [craft fix] maps (:representative). Drops on-ground/null-position
   and any state lacking a public icao24 → [nil nil]."
   [state ts]
-  (let [icao24 (str/lower-case (str/trim (or (nth state 0) "")))]
+  (let [icao24 (str/lower (str/trim (or (nth state 0) "")))]
     (if (or (str/blank? icao24) (nil? (nth state 5)) (nil? (nth state 6)))
       [nil nil]
       (let [cid (str "craft.aircraft." icao24)
