@@ -21,7 +21,7 @@
   strings; map keys are the EDN string keys verbatim; pure fns; file I/O only at #?(:clj)
   edges. Accumulation maps carry ::order metadata = first-touch insertion order so the
   stable sort-by ties exactly the Python dict iteration order (byte-parity)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── minimal EDN reader (subset: [] {} :kw "str" num bool nil) — mirrors analyze.py's
 ;; _TOK / _tokens / _atom / _parse faithfully. Keywords kept as ":ns/name" strings (NOT

@@ -9,7 +9,7 @@
     - G4 no person-tracking: craft / lane / chokepoint aggregates and NO person/owner/passenger/crew attr;
     - no external I/O (offline ingest, local persist — G7 stays gated)."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])
             [watari.methods.autorun :as autorun]
             [watari.methods.kotoba :as kotoba]))

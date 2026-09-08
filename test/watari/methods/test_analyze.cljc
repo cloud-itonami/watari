@@ -10,7 +10,7 @@
   on the unported autorun/ingest/kotoba modules; they are intentionally out of scope here
   (mirroring the inochi/rasen precedent). All 8 PURE analyze assertions are ported 1:1."
   (:require [clojure.test :refer [deftest is run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.set]
             [clojure.java.io :as io]
             [watari.methods.analyze :as analyze]))
@@ -85,5 +85,5 @@
   (let [[craft fixes legs lanes a] (load*)
         md (analyze/render-report craft fixes legs lanes a)]
     (is (and (str/includes? md "person-surveillance")
-             (str/includes? (str/lower-case md) "never")))
+             (str/includes? (str/lower md) "never")))
     (is (str/includes? md "target-list"))))   ;; the framing invariant is stated in the report
