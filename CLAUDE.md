@@ -68,16 +68,16 @@ Mapping: `00-contracts/lexicons/com/etzhayyim/watari/MIGRATION-NOTES.md`.
 
 ## Cells
 
-- `cell:watari.analyze` → `src/watari/methods/analyze.cljc` (stdlib only). Pipeline:
+- `cell:watari.analyze` → `src/watari/methods/analyze.kotoba` (stdlib only). Pipeline:
   classify → latest as-of fix per craft → lane/corridor load (by kind) → chokepoint transit →
   approach congestion → freshness tail. Aggregate-first. Idempotent; rerun to regenerate `out/`.
-- `cell:watari.ingest` → `src/watari/methods/ingest.cljc` (R0 stub) — AISStream/OpenSky public batch →
+- `cell:watari.ingest` → `src/watari/methods/ingest.kotoba` (R0 stub) — AISStream/OpenSky public batch →
   normalize → dedup-merge. Live fetch G7-gated.
-- `cell:watari.autorun` → `src/watari/methods/autorun.cljc` (+ `src/watari/methods/kotoba.cljc`). The autonomous
+- `cell:watari.autorun` → `src/watari/methods/autorun.kotoba` (+ `src/watari/methods/kotoba.kotoba`). The autonomous
   Murakumo-fleet heartbeat — the same shape shionome/ipaddress/yabai/sukashi/watatsuna use. Each
   cycle observes the OFFLINE merged graph → classify → analyze → **persists a content-addressed
   transaction** (graph datoms + derived `:movement/*`) to the append-only **local** kotoba Datom
-  log (`src/watari/methods/kotoba.cljc`), linking the previous tx's CID into a verifiable commit-DAG.
+  log (`src/watari/methods/kotoba.kotoba`), linking the previous tx's CID into a verifiable commit-DAG.
   Deterministic / resume-safe; NO external I/O. **G2/G4 hold by construction**: only aggregate
   `:movement/*` lane/chokepoint/approach density is representable — no per-craft follow feed and
   no person/owner/passenger/crew attr (a craft is a craft, never a person). The chokepoint-transit
