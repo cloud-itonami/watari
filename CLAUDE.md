@@ -90,7 +90,7 @@ Mapping: `00-contracts/lexicons/com/etzhayyim/watari/MIGRATION-NOTES.md`.
   no-external-I/O).
 
   ```bash
-  bb -m watari.methods.autorun.cljc --cycles 3 --fresh   # AUTONOMOUS heartbeat → LOCAL kotoba Datom log
+  kbb -m watari.methods.autorun.cljc --cycles 3 --fresh   # AUTONOMOUS heartbeat → LOCAL kotoba Datom log
   ```
 
 ## Lexicons (kotoba-native)

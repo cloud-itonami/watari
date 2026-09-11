@@ -1,4 +1,4 @@
-#!/usr/bin/env bb
+#!/usr/bin/env kbb
 ;; Cross-process CID-determinism guard for the watari kotoba commit-DAG.
 (ns watari.methods.test-kotoba-cid
   "test_kotoba_cid.clj — watari content-addressing reproducibility (ADR-2605312345 / 2606041827).
@@ -9,7 +9,7 @@
   vector (a sibling may edit the seed). G4 no-person-tracking: the fixed vector carries only
   craft + chokepoint movement, no person fields.
 
-  Run:  bb --classpath 20-actors methods/test_kotoba_cid.clj"
+  Run:  kbb --classpath 20-actors methods/test_kotoba_cid.clj"
   (:require [watari.methods.kotoba :as k]
             [clojure.java.io :as io]
             [clojure.test :refer [deftest is run-tests]]))

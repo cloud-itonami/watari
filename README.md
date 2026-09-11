@@ -26,11 +26,11 @@ sea-and-sky passage. Lineage with **watatsumi 綿津見** (sea body) and **watat
 
 ```bash
 # analyze the bounded :representative seed → situational report + derived datoms
-bb -m watari.methods.analyze.cljc
+kbb -m watari.methods.analyze.cljc
 #   → out/intel-report.md  +  out/movement-situation.kotoba.edn
 
 # normalize a public AIS/ADS-B batch (offline; live fetch is G7-gated)
-bb -m watari.methods.ingest.cljc --batch wire/ingest/sample-batch.json
+kbb -m watari.methods.ingest.cljc --batch wire/ingest/sample-batch.json
 ```
 
 ## What it computes (aggregate-first)
