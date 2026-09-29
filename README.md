@@ -46,7 +46,7 @@ kbb -m watari.methods.ingest.cljc --batch wire/ingest/sample-batch.json
 
 ```
 com-etzhayyim-watari/
-├── CLAUDE.md          # actor-local rules (read repo-root CLAUDE.md first)
+├── AGENTS.md          # actor-local rules (read repo-root AGENTS.md first)
 ├── manifest.edn    # DID, cells, lexicons, 9 gates, 6 non-goals
 ├── data/
 │   └── seed-craft-graph.kotoba.edn   # bounded :representative seed (13 craft, 26 fixes, 9 lanes)

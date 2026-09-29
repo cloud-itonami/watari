@@ -1,7 +1,7 @@
 # watari 渡り — agent reference
 
 > World live moving-craft (ship + aircraft) knowledge graph. Tier-B, R0 design-only. ADR-2606041827.
-> Read the repo-root `CLAUDE.md` first; this file only adds actor-local rules.
+> Read the repo-root `AGENTS.md` first; this file only adds actor-local rules.
 
 ## Identity
 
